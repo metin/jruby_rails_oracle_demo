@@ -1,0 +1,27 @@
+<h1>Listing emps</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>EID</th>
+    <th>ENAME</th>
+    <th>AGE</th>
+    <th>SALARY</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @emps.each do |emp| %>
+  <tr>
+    <td><%= emp.eid %></td>
+    <td><%= emp.ename %></td>
+    <td><%= emp.age %></td>
+    <td><%= emp.salary %></td>
+    <td><%= link_to 'Edit', {:action=>:edit, :id => emp.eid}, {:method=>:get} %></td>
+    <td><%= link_to 'Destroy', '' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Emp', new_emp_path %>

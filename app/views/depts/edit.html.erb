@@ -1,0 +1,31 @@
+<h1>Editing dept</h1>
+
+<%= form_for @dept, :as => :dept, :url => {:action=>:update, :id=>@dept.did}, :method => :put, :html => { } do |f| %>
+
+  <% if @dept.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dept.errors.count, "error") %> prohibited this emp from being saved:</h2>
+
+      <ul>
+      <% @dept.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :budget %><br />
+    <%= f.text_field :budget %>
+  </div>
+  <div class="field">
+    <%= f.label :managerid %><br />
+    <%= f.text_field :managerid %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
